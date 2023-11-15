@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.ui.theme
+package com.pereyrarg11.mobile.core.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
