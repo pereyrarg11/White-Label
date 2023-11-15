@@ -5,4 +5,5 @@
     <!-- Errors -->
     <string name="error_default">Something went wrong. Try later.</string>
     <string name="error_no_results">No results found.</string>
+    <string name="message_loading">Loading</string>
 </resources>

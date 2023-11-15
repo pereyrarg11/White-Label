@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.core.presentation.components
+package com.pereyrarg11.mobile.core.presentation.screen
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
