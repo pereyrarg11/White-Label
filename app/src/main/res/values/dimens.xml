@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_md">16dp</dimen>
+    <dimen name="feedback_screen_icon_size">48dp</dimen>
+    <dimen name="size_lg">24dp</dimen>
+</resources>
