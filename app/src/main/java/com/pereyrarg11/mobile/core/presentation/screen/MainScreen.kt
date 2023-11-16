@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 fun MainScreen(
     modifier: Modifier = Modifier,
     topBar: @Composable () -> Unit = {},
-    content: @Composable (Modifier) -> Unit = {},
+    content: @Composable (Modifier) -> Unit,
 ) {
     Scaffold(
         modifier = modifier,

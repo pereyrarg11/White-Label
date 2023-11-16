@@ -24,7 +24,7 @@ import com.pereyrarg11.mobile.core.presentation.theme.WhiteLabelTheme
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun DefaultImage(
+fun BaseImage(
     source: ImageSource,
     modifier: Modifier = Modifier,
     contentScale: ContentScale = ContentScale.Crop,
@@ -51,7 +51,7 @@ fun DefaultImage(
 @Composable
 fun RemoteImagePreview() {
     WhiteLabelTheme {
-        DefaultImage(
+        BaseImage(
             source = ImageSource(
                 contentDescription = "Hello world",
                 remoteUrl = "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/2_Android_14_statue.width-1000.format-webp.webp"
@@ -67,7 +67,7 @@ fun RemoteImagePreview() {
 @Composable
 fun CircleImagePreview() {
     WhiteLabelTheme {
-        DefaultImage(
+        BaseImage(
             source = ImageSource(
                 contentDescription = "Hello world",
             ),
