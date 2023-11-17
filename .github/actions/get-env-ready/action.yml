@@ -1,13 +1,10 @@
 name: Get environment ready
-description: Performs a checkout, setup Java and grant execute permission for gradlew.
+description: Setup Java and grant execute permission for gradlew.
 author: Gabriel Pereyra
 
 runs:
   using: "composite"
   steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
