@@ -1,0 +1,15 @@
+name: Build APK
+description: Builds an APK for desired build variant.
+author: Gabriel Pereyra
+inputs:
+  BUILD_VARIANT:
+    description: Build variant either Release or Debug
+    required: false
+    default: Release
+
+runs:
+  using: "composite"
+  steps:
+    - name: Build with Gradle
+      run: ./gradlew assemble${{ inputs.BUILD_VARIANT }}
+      shell: bash
