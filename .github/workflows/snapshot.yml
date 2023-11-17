@@ -17,15 +17,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Get environment ready
-      uses: ./.github/actions/get-env-ready
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Build APK
-      uses: ./.github/actions/build-apk
-      with:
-        BUILD_VARIANT: "${{ inputs.build_variant }}"
+      - name: Get environment ready
+        uses: ./.github/actions/get-env-ready
 
-    - name: Distribute APK
-      uses: ./.github/actions/distribute-apk
-      with:
-        PREFIX: "snapshot"
+      - name: Build APK
+        uses: ./.github/actions/build-apk
+        with:
+          BUILD_VARIANT: "${{ inputs.build_variant }}"
+
+      - name: Distribute APK
+        uses: ./.github/actions/distribute-apk
+        with:
+          PREFIX: "snapshot"
