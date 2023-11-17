@@ -15,10 +15,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.pereyrarg11.mobile.R
 import com.pereyrarg11.mobile.core.presentation.model.ImageSource
 import com.pereyrarg11.mobile.core.presentation.theme.WhiteLabelTheme
 
@@ -54,7 +56,7 @@ fun RemoteImagePreview() {
         BaseImage(
             source = ImageSource(
                 contentDescription = "Hello world",
-                remoteUrl = "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/2_Android_14_statue.width-1000.format-webp.webp"
+                remoteUrl = stringResource(R.string.url_image_example)
             ),
             modifier = Modifier
                 .fillMaxWidth()
