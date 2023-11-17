@@ -1,0 +1,23 @@
+name: Weekly build
+on:
+  schedule:
+    - cron: '10 20 * * 5'
+
+jobs:
+  weekly_build:
+    name: Build and distribute APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get environment ready
+        uses: ./.github/actions/get-env-ready
+
+      - name: Build APK
+        uses: ./.github/actions/build-apk
+        with:
+          BUILD_VARIANT: "Release"
+
+      - name: Distribute APK
+        uses: ./.github/actions/distribute-apk
+        with:
+          PREFIX: "weekly"
