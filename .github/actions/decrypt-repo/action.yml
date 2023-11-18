@@ -1,5 +1,5 @@
 name: Decrypt repository
-description: Installs git-crypt and unlocks the repository
+description: Unlocks the repository
 author: Gabriel Pereyra
 inputs:
   GIT_CRYPT_KEY:
@@ -18,20 +18,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Install git-crypt
-      run: |
-        if [[ "$RUNNER_OS" == "Linux" ]]; then
-          git clone https://github.com/AGWA/git-crypt.git
-          cd git-crypt && make && make install PREFIX=/opt/project
-          echo "/opt/project/bin" >> $GITHUB_PATH
-        else
-          brew install git-crypt
-        fi
-      shell: bash
-
-    - name: Unlock git-crypt
-      run: |
-        echo "${{ inputs.GIT_CRYPT_KEY }}" | base64 -d > ./git-crypt-key
-        git-crypt unlock ./git-crypt-key && echo "success"
-        rm ./git-crypt-key
-      shell: bash
+    - name: Unlock secrets
+      uses: sliteteam/github-action-git-crypt-unlock@1.2.0
+      env:
+        GIT_CRYPT_KEY: ${{ inputs.GIT_CRYPT_KEY }}
