@@ -15,3 +15,6 @@ runs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       shell: bash
+
+    - name: Decrypt repo
+      uses: ./.github/actions/decrypt-repo
