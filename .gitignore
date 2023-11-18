@@ -42,10 +42,6 @@ misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
 
-# Keystore files
-*.jks
-*.keystore
-
 # Google Services (e.g. APIs or Firebase)
 google-services.json
 
@@ -78,9 +74,6 @@ out/
 
 # Gradle files
 .gradle
-
-# Signing files
-.signing/
 
 # Local configuration file (sdk path, etc)
 
@@ -181,3 +174,13 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/android,androidstudio
+
+# git-crypt key
+git-crypt-white-label
+
+# Next cases MUST be managed by git-crypt or any other encription workaround
+# Signing files
+# .signing/
+# Keystore files
+# *.jks
+# *.keystore

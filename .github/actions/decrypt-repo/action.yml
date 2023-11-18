@@ -1,0 +1,24 @@
+name: Decrypt repository
+description: Unlocks the repository
+author: Gabriel Pereyra
+inputs:
+  GIT_CRYPT_KEY:
+    description: Key for unlock git-crypt
+    required: true
+
+# How to generate the GIT_CRYPT_KEY?
+#
+# Step 1: export and encode your git-crypt key by using the command:
+# git-crypt export-key ./tmp-key && cat ./tmp-key | base64 | pbcopy && rm ./tmp-key
+#
+# Step 2: add the output as a repository secret with the name GIT_CRYPT_KEY
+#
+# acknowledgements: https://github.com/marketplace/actions/github-action-to-unlock-git-crypt-secrets
+
+runs:
+  using: "composite"
+  steps:
+    - name: Unlock secrets
+      uses: sliteteam/github-action-git-crypt-unlock@1.2.0
+      env:
+        GIT_CRYPT_KEY: ${{ inputs.GIT_CRYPT_KEY }}

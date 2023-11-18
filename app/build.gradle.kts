@@ -1,12 +1,28 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("io.gitlab.arturbosch.detekt")
 }
 
+val signingPropertiesFile = rootProject.file("signing/signingSecret.properties")
+val signingProperties = Properties()
+signingProperties.load(FileInputStream(signingPropertiesFile))
+
 android {
     namespace = "com.pereyrarg11.mobile"
     compileSdk = 34
+
+    signingConfigs {
+        create("release") {
+            keyAlias = signingProperties["KEY_ALIAS"] as String
+            keyPassword = signingProperties["KEY_PASSWORD"] as String
+            storeFile = file(signingProperties["STORE_FILE"] as String)
+            storePassword = signingProperties["STORE_PASSWORD"] as String
+        }
+    }
 
     defaultConfig {
         applicationId = "com.pereyrarg11.mobile"
@@ -28,6 +44,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
