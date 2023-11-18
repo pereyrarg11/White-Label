@@ -1,6 +1,10 @@
 name: Decrypt repository
 description: Installs git-crypt and unlocks the repository
 author: Gabriel Pereyra
+inputs:
+  GIT_CRYPT_KEY:
+    description: Key for unlock git-crypt
+    required: true
 
 # How to generate the GIT_CRYPT_KEY?
 #
@@ -27,7 +31,7 @@ runs:
 
     - name: Unlock git-crypt
       run: |
-        echo "${{ secrets.GIT_CRYPT_KEY }}" | base64 -d > ./git-crypt-key
+        echo "${{ inputs.GIT_CRYPT_KEY }}" | base64 -d > ./git-crypt-key
         git-crypt unlock ./git-crypt-key && echo "success"
         rm ./git-crypt-key
       shell: bash

@@ -17,5 +17,10 @@ jobs:
       - name: Get environment ready
         uses: ./.github/actions/get-env-ready
 
+      - name: Decrypt repo
+        uses: ./.github/actions/decrypt-repo
+        with:
+          GIT_CRYPT_KEY: "${{ secrets.GIT_CRYPT_KEY }}"
+
       - name: Build and run detekt
         run: ./gradlew detekt
