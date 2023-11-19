@@ -1,3 +1,4 @@
+import com.google.firebase.appdistribution.gradle.firebaseAppDistribution
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -7,6 +8,8 @@ plugins {
     id("io.gitlab.arturbosch.detekt")
     // Google services Gradle plugin
     id("com.google.gms.google-services")
+    // App Distribution Gradle plugin
+    id("com.google.firebase.appdistribution")
 }
 
 val signingPropertiesFile = rootProject.file("signing/signingSecret.properties")
@@ -47,6 +50,12 @@ android {
                 "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("release")
+            firebaseAppDistribution {
+                artifactType = "APK"
+                releaseNotes = "Hello there! This version is ready to test."
+                testers = "pereyrarg11@gmail.com"
+                serviceCredentialsFile = "api-secrets/app-distribution/services_account_key.json"
+            }
         }
         debug {
             applicationIdSuffix = ".debug"

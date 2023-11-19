@@ -1,3 +1,4 @@
 *Secret.* filter=git-crypt diff=git-crypt
 google-services.json filter=git-crypt diff=git-crypt
+api-secrets/app-distribution/services_account_key.json filter=git-crypt diff=git-crypt
 .gitattributes !filter !diff

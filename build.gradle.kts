@@ -5,4 +5,6 @@ plugins {
     id("io.gitlab.arturbosch.detekt") version "1.23.3" apply false
     // Google services Gradle plugin
     id("com.google.gms.google-services") version "4.4.0" apply false
+    // App Distribution Gradle plugin
+    id("com.google.firebase.appdistribution") version "4.0.1" apply false
 }
