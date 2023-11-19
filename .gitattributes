@@ -1,2 +1,3 @@
 *Secret.* filter=git-crypt diff=git-crypt
+google-services.json filter=git-crypt diff=git-crypt
 .gitattributes !filter !diff

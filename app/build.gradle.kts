@@ -5,6 +5,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("io.gitlab.arturbosch.detekt")
+    // Google services Gradle plugin
+    id("com.google.gms.google-services")
 }
 
 val signingPropertiesFile = rootProject.file("signing/signingSecret.properties")
@@ -45,6 +47,9 @@ android {
                 "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("release")
+        }
+        debug {
+            applicationIdSuffix = ".debug"
         }
     }
     compileOptions {
@@ -88,4 +93,9 @@ dependencies {
     /* Jetpack Compose */
     // Glide
     implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
+
+    /* Firebase */
+    // Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-analytics")
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1030961462399",
+    "project_id": "white-label-ef4bc",
+    "storage_bucket": "white-label-ef4bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030961462399:android:98313663ed024938f8534a",
+        "android_client_info": {
+          "package_name": "com.pereyrarg11.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj9WEDs28lI2YYwZfimvCRHn7vFcfxfcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030961462399:android:f5b3f4fbe3f13600f8534a",
+        "android_client_info": {
+          "package_name": "com.pereyrarg11.mobile.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj9WEDs28lI2YYwZfimvCRHn7vFcfxfcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
