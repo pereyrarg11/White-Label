@@ -52,8 +52,8 @@ android {
             signingConfig = signingConfigs.getByName("release")
             firebaseAppDistribution {
                 artifactType = "APK"
-                groups = "android-developers"
                 serviceCredentialsFile = "api-secrets/app-distribution/services_account_key.json"
+                // groups, testers and releaseNotes SHOULD be added on gradle command execution
             }
         }
         debug {
