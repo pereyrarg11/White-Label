@@ -15,5 +15,5 @@ runs:
   using: "composite"
   steps:
     - name: App distribution upload
-      run: ./gradlew appDistributionUpload${{ inputs.BUILD_VARIANT }} --groups=${{ inputs.TESTER_GROUPS }} --releaseNotes=${{ inputs.RELEASE_NOTES }}
+      run: ./gradlew appDistributionUpload${{ inputs.BUILD_VARIANT }} --groups="${{ inputs.TESTER_GROUPS }}" --releaseNotes="${{ inputs.RELEASE_NOTES }}"
       shell: bash
