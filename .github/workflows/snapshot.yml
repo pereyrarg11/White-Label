@@ -3,7 +3,7 @@ name: Snapshot
 on:
   workflow_dispatch:
     inputs:
-      build_variant:
+      BUILD_VARIANT:
         description: 'Build variant'
         required: true
         default: 'Release'
@@ -11,6 +11,15 @@ on:
         options:
           - Debug
           - Release
+      TESTER_GROUPS:
+        description: 'Groups for testing separated by a comma'
+        required: true
+        default: 'android-developers'
+        type: string
+      RELEASE_NOTES:
+        description: 'Describes the content of this version'
+        required: true
+        type: string
 
 jobs:
   build:
@@ -32,9 +41,16 @@ jobs:
       - name: Build APK
         uses: ./.github/actions/build-apk
         with:
-          BUILD_VARIANT: "${{ inputs.build_variant }}"
+          BUILD_VARIANT: "${{ inputs.BUILD_VARIANT }}"
+
+      - name: Upload artifact
+        uses: ./.github/actions/upload-apk
+        with:
+          PREFIX: 'snapshot'
 
       - name: Distribute APK
         uses: ./.github/actions/distribute-apk
         with:
-          PREFIX: "snapshot"
+          BUILD_VARIANT: "${{ inputs.BUILD_VARIANT }}"
+          TESTER_GROUPS: "${{ inputs.TESTER_GROUPS }}"
+          RELEASE_NOTES: "${{ inputs.RELEASE_NOTES }}"

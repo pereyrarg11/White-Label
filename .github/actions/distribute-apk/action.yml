@@ -1,27 +1,19 @@
-name: Distribute APK
-description: Takes the APK(s) and send them through all the available distribution channels
-author: Gabriel Pereyra
+name: App distribution
+description: Uploads an APK of specific build variant to App Distribution console.
 inputs:
-  PREFIX:
-    description: Describes the purpose of the APK(s) (e.g. release, snapshot, weekly)
-    required: false
-    default: snapshot
+  BUILD_VARIANT:
+    description: Release or Debug variant
+    required: true
+  TESTER_GROUPS:
+    description: Groups for testing, separated by a comma
+    required: true
+  RELEASE_NOTES:
+    description: Describes the content of this version
+    required: true
 
 runs:
   using: "composite"
   steps:
-    - name: Get current time
-      id: current_time
-      uses: josStorer/get-current-time@v2
-      with:
-        format: "YYYY-MM-DDTHH-mm"
-        utcOffset: "-06:00"
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: "${{ inputs.PREFIX }}_${{ steps.current_time.outputs.formattedTime }}"
-        path: "./app/build/outputs/apk/**/*.apk"
-        if-no-files-found: error
-
-    # TODO: distribute APK through Firebase App Distribution
+    - name: App distribution upload
+      run: ./gradlew appDistributionUpload${{ inputs.BUILD_VARIANT }} --groups=${{ inputs.TESTER_GROUPS }} --releaseNotes=${{ inputs.RELEASE_NOTES }}
+      shell: bash
