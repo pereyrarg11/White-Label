@@ -7,6 +7,7 @@ import javax.inject.Singleton
 class ErrorLoggerMediator @Inject constructor(
     private val errorLoggers: Set<@JvmSuppressWildcards ErrorLogger>,
 ) : ErrorLogger {
+
     override fun logErrorMessage(errorMessage: String) {
         errorLoggers.forEach { logger ->
             logger.logErrorMessage(errorMessage)
