@@ -6,6 +6,9 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("io.gitlab.arturbosch.detekt")
+    // Dagger Hilt
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
     // Google services Gradle plugin
     id("com.google.gms.google-services")
     // App Distribution Gradle plugin
@@ -63,11 +66,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -79,6 +82,9 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    hilt {
+        enableAggregatingTask = true
     }
 }
 
@@ -104,9 +110,19 @@ dependencies {
     // Glide
     implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
 
+    // TODO: define version as a constant
+    /* Dependency Injection */
+    implementation("com.google.dagger:hilt-android:2.48.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.48.1")
+
     /* Firebase */
     // Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-crashlytics")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
