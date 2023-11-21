@@ -14,7 +14,7 @@ on:
       TESTER_GROUPS:
         description: 'Groups for testing separated by a comma'
         required: true
-        default: "${{ vars.FAD_TESTER_GROUPS }}"
+        default: 'android-developers'
         type: string
       RELEASE_NOTES:
         description: 'Describes the content of this version'
