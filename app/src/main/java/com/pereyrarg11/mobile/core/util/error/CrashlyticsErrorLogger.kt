@@ -3,8 +3,11 @@ package com.pereyrarg11.mobile.core.util.error
 import com.google.firebase.crashlytics.ktx.crashlytics
 import com.google.firebase.crashlytics.setCustomKeys
 import com.google.firebase.ktx.Firebase
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class CrashlyticsErrorLogger : ErrorLogger {
+@Singleton
+class CrashlyticsErrorLogger @Inject constructor() : ErrorLogger {
     override fun logErrorMessage(errorMessage: String) {
         logException(Exception(errorMessage))
     }
