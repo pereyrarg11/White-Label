@@ -1,8 +1,11 @@
 package com.pereyrarg11.mobile.core.util.error
 
 import android.util.Log
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class LocalErrorLogger : ErrorLogger {
+@Singleton
+class LocalErrorLogger @Inject constructor() : ErrorLogger {
     private val logTag = "LocalErrorLogger"
 
     override fun logErrorMessage(errorMessage: String) {
