@@ -10,6 +10,8 @@ plugins {
     id("com.google.gms.google-services")
     // App Distribution Gradle plugin
     id("com.google.firebase.appdistribution")
+    // Crashlytics Gradle plugin
+    id("com.google.firebase.crashlytics")
 }
 
 val signingPropertiesFile = rootProject.file("signing/signingSecret.properties")
@@ -106,4 +108,5 @@ dependencies {
     // Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-crashlytics")
 }
