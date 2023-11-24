@@ -45,6 +45,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        firebaseAppDistribution {
+            artifactType = "APK"
+            serviceCredentialsFile = "secrets/google_service_account/white-label-ef4bc-49710878f259.json"
+            // groups, testers and releaseNotes SHOULD be added on gradle command execution
+        }
     }
 
     buildTypes {
@@ -55,11 +60,6 @@ android {
                 "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("release")
-            firebaseAppDistribution {
-                artifactType = "APK"
-                serviceCredentialsFile = "api-secrets/app-distribution/services_account_key.json"
-                // groups, testers and releaseNotes SHOULD be added on gradle command execution
-            }
         }
         debug {
             applicationIdSuffix = ".debug"
