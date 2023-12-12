@@ -16,13 +16,13 @@ abstract class ErrorLoggerModule {
     @Binds
     @IntoSet
     abstract fun bindCrashlyticsErrorLogger(
-        errorLogger: CrashlyticsErrorLogger,
+        errorLogger: CrashlyticsErrorLogger
     ): ErrorLogger.Facade
 
     @Binds
     @IntoSet
     abstract fun bindLocalErrorLogger(
-        errorLogger: LocalErrorLogger,
+        errorLogger: LocalErrorLogger
     ): ErrorLogger.Facade
 
     @Binds
