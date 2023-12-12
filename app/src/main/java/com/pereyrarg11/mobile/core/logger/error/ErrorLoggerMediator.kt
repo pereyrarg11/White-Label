@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.core.util.error
+package com.pereyrarg11.mobile.core.logger.error
 
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -7,12 +7,6 @@ import javax.inject.Singleton
 class ErrorLoggerMediator @Inject constructor(
     private val errorLoggers: Set<@JvmSuppressWildcards ErrorLogger>,
 ) : ErrorLogger {
-
-    override fun logErrorMessage(errorMessage: String) {
-        errorLoggers.forEach { logger ->
-            logger.logErrorMessage(errorMessage)
-        }
-    }
 
     override fun logException(exception: Exception) {
         errorLoggers.forEach { logger ->
