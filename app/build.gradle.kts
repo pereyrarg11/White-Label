@@ -17,20 +17,26 @@ plugins {
     id("com.google.firebase.crashlytics")
 }
 
-val signingPropertiesFile = rootProject.file("signing/signingSecret.properties")
-val signingProperties = Properties()
-signingProperties.load(FileInputStream(signingPropertiesFile))
-
 android {
     namespace = "com.pereyrarg11.mobile"
     compileSdk = 34
 
     signingConfigs {
         create("release") {
-            keyAlias = signingProperties["KEY_ALIAS"] as String
-            keyPassword = signingProperties["KEY_PASSWORD"] as String
-            storeFile = file(signingProperties["STORE_FILE"] as String)
-            storePassword = signingProperties["STORE_PASSWORD"] as String
+            val (storePathProp, storePassProp, keyAliasProp, keyPassProp) =
+                getSigningPropertiesByFlavorName(this.name)
+            keyAlias = keyAliasProp
+            keyPassword = keyPassProp
+            storeFile = file(storePathProp)
+            storePassword = storePassProp
+        }
+        getByName("debug") {
+            val (storePathProp, storePassProp, keyAliasProp, keyPassProp) =
+                getSigningPropertiesByFlavorName(this.name)
+            keyAlias = keyAliasProp
+            keyPassword = keyPassProp
+            storeFile = file(storePathProp)
+            storePassword = storePassProp
         }
     }
 
@@ -45,6 +51,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        firebaseAppDistribution {
+            artifactType = "APK"
+            serviceCredentialsFile = "secrets/google_service_account/white-label-ef4bc-49710878f259.json"
+            // groups, testers and releaseNotes SHOULD be added on gradle command execution
+        }
     }
 
     buildTypes {
@@ -55,14 +66,10 @@ android {
                 "proguard-rules.pro"
             )
             signingConfig = signingConfigs.getByName("release")
-            firebaseAppDistribution {
-                artifactType = "APK"
-                serviceCredentialsFile = "api-secrets/app-distribution/services_account_key.json"
-                // groups, testers and releaseNotes SHOULD be added on gradle command execution
-            }
         }
         debug {
             applicationIdSuffix = ".debug"
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -125,4 +132,30 @@ dependencies {
 // Allow references to generated code
 kapt {
     correctErrorTypes = true
+}
+
+/**
+ * Returns an array of strings with the next values:
+ * STORE_FILE, STORE_PASSWORD, KEY_ALIAS, KEY_PASSWORD
+ */
+fun getSigningPropertiesByFlavorName(flavorName: String): Array<String> {
+    try {
+        val signingProperties = loadPropertiesFile("signing/$flavorName/signing.properties")
+        return arrayOf(
+            signingProperties.getProperty("STORE_FILE").orEmpty(),
+            signingProperties.getProperty("STORE_PASSWORD").orEmpty(),
+            signingProperties.getProperty("KEY_ALIAS").orEmpty(),
+            signingProperties.getProperty("KEY_PASSWORD").orEmpty(),
+        )
+    } catch (exception: Exception) {
+        throw Exception("Signing has not been configured for \"$flavorName\".\n${exception.message}")
+    }
+}
+
+@Throws(Exception::class)
+fun loadPropertiesFile(rootPath: String): Properties {
+    val propertiesFile = rootProject.file(rootPath)
+    val properties = Properties()
+    properties.load(FileInputStream(propertiesFile))
+    return properties
 }

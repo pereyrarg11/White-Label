@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Actions -->
+    <string name="action_back">Atrás</string>
+    <!-- Errors -->
+    <string name="error_default">Algo salió mal. Intente más tarde.</string>
+    <string name="error_no_results">No se encontraron resultados.</string>
+    <string name="message_loading">Cargando</string>
+</resources>

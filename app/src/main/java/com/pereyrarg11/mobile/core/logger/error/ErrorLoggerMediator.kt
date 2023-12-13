@@ -1,27 +1,21 @@
-package com.pereyrarg11.mobile.core.util.error
+package com.pereyrarg11.mobile.core.logger.error
 
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class ErrorLoggerMediator @Inject constructor(
-    private val errorLoggers: Set<@JvmSuppressWildcards ErrorLogger>,
+    private val facades: Set<@JvmSuppressWildcards ErrorLogger.Facade>,
 ) : ErrorLogger {
 
-    override fun logErrorMessage(errorMessage: String) {
-        errorLoggers.forEach { logger ->
-            logger.logErrorMessage(errorMessage)
-        }
-    }
-
     override fun logException(exception: Exception) {
-        errorLoggers.forEach { logger ->
+        facades.forEach { logger ->
             logger.logException(exception)
         }
     }
 
     override fun setProperties(properties: Map<String, String>) {
-        errorLoggers.forEach { logger ->
+        facades.forEach { logger ->
             logger.setProperties(properties)
         }
     }
