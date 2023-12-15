@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">White Label</string>
+    <string name="app_name" translatable="false">White Label</string>
+    <!-- Actions -->
+    <string name="action_back">Back</string>
+    <!-- Errors -->
+    <string name="error_default">Something went wrong. Try later.</string>
+    <string name="error_no_results">No results found.</string>
+    <string name="message_loading">Loading</string>
+    <!-- URL -->
+    <string name="url_image_example" translatable="false">https://storage.googleapis.com/gweb-uniblog-publish-prod/images/2_Android_14_statue.width-1000.format-webp.webp</string>
 </resources>

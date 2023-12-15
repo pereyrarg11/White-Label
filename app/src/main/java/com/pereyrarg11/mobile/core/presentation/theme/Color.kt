@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.ui.theme
+package com.pereyrarg11.mobile.core.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
