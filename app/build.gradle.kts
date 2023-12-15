@@ -44,8 +44,11 @@ android {
         applicationId = "com.pereyrarg11.mobile"
         minSdk = 21
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        // 1_0001_2_3
+        // Major Minor  Patch  Release candidate
+        // 1     0001   2      3
+        versionCode = 1_0001_0_1
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
