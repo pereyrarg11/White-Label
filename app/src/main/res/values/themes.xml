@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.WhiteLabel" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.WhiteLabel.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/light_teal</item>
+        <item name="postSplashScreenTheme">@style/Theme.WhiteLabel</item>
+    </style>
 </resources>

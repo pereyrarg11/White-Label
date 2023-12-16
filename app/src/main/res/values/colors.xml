@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!-- color palette: https://colorhunt.co/palette/54bab918978fe9dac1f7ecde -->
+    <color name="beige">#E9DAC1</color>
+    <color name="teal">#18978F</color>
+    <color name="light_beige">#F7ECDE</color>
+    <color name="light_teal">#54BAB9</color>
+</resources>
