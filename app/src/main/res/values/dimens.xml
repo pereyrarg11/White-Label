@@ -4,5 +4,5 @@
     <dimen name="feedback_screen_icon_size">48dp</dimen>
     <dimen name="size_lg">24dp</dimen>
     <!-- SplashScreen -->
-    <dimen name="splash_screen_image_size">200dp</dimen>
+    <dimen name="splash_screen_image_size">288dp</dimen>
 </resources>

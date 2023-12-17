@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">@color/purple_40</color>
+    <color name="secondary">@color/purple_grey_40</color>
+    <color name="tertiary">@color/pink_40</color>
+</resources>

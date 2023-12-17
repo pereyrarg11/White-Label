@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -19,6 +20,7 @@ import com.pereyrarg11.mobile.BuildConfig
 import com.pereyrarg11.mobile.R
 import com.pereyrarg11.mobile.core.presentation.components.BaseImage
 import com.pereyrarg11.mobile.core.presentation.model.ImageSource
+import com.pereyrarg11.mobile.core.presentation.theme.WhiteLabelTheme
 
 @Composable
 fun SplashContentScreen(
@@ -34,7 +36,7 @@ fun SplashContentScreen(
         BaseImage(
             source = ImageSource(
                 contentDescription = stringResource(id = R.string.app_name),
-                placeholder = R.drawable.img_placeholder
+                placeholder = R.drawable.ic_splash
             ),
             modifier = Modifier
                 .align(Alignment.Center)
@@ -45,12 +47,24 @@ fun SplashContentScreen(
         Text(
             text = "v$versionName",
             modifier = Modifier.align(Alignment.BottomCenter),
+            color = Color.Black,
+            style = MaterialTheme.typography.titleLarge,
         )
     }
 }
 
 @Preview
 @Composable
-fun SplashContentScreenPreview() {
-    SplashContentScreen()
+fun LightSplashContentScreenPreview() {
+    WhiteLabelTheme(darkTheme = false) {
+        SplashContentScreen()
+    }
+}
+
+@Preview
+@Composable
+fun DarkSplashContentScreenPreview() {
+    WhiteLabelTheme(darkTheme = true) {
+        SplashContentScreen()
+    }
 }
