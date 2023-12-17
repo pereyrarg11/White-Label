@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+    <entry>
+        <key>developerNickname</key>
+        <value>Gabriel</value>
+    </entry>
+    <entry>
+        <key>showContactInfo</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>stars</key>
+        <value>1</value>
+    </entry>
+    <entry>
+        <key>contactInfo</key>
+        <value />
+    </entry>
+</defaults>

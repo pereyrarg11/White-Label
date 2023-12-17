@@ -21,6 +21,9 @@ android {
     namespace = "com.pereyrarg11.mobile"
     compileSdk = 34
 
+    buildFeatures {
+        buildConfig = true
+    }
     signingConfigs {
         create("release") {
             val (storePathProp, storePassProp, keyAliasProp, keyPassProp) =
@@ -128,6 +131,11 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-config")
+
+    /* Remote data */
+    // Gson
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
 // Allow references to generated code
