@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.feature.splash.presentation.screen
+package com.pereyrarg11.mobile.feature.splash.presentation.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -23,7 +23,7 @@ import com.pereyrarg11.mobile.core.presentation.model.ImageSource
 import com.pereyrarg11.mobile.core.presentation.theme.WhiteLabelTheme
 
 @Composable
-fun SplashContentScreen(
+fun SplashContent(
     modifier: Modifier = Modifier,
     versionName: String = BuildConfig.VERSION_NAME,
 ) {
@@ -55,16 +55,16 @@ fun SplashContentScreen(
 
 @Preview
 @Composable
-fun LightSplashContentScreenPreview() {
+fun LightSplashContentPreview() {
     WhiteLabelTheme(darkTheme = false) {
-        SplashContentScreen()
+        SplashContent()
     }
 }
 
 @Preview
 @Composable
-fun DarkSplashContentScreenPreview() {
+fun DarkSplashContentPreview() {
     WhiteLabelTheme(darkTheme = true) {
-        SplashContentScreen()
+        SplashContent()
     }
 }

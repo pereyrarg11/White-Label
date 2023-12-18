@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.feature.app_config.presentation.screen
+package com.pereyrarg11.mobile.feature.app_config.presentation.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,7 +18,7 @@ import com.pereyrarg11.mobile.core.domain.model.AppConfigModel
 import com.pereyrarg11.mobile.core.presentation.theme.WhiteLabelTheme
 
 @Composable
-fun AppConfigSuccessScreen(
+fun AppConfigContent(
     model: AppConfigModel,
     modifier: Modifier = Modifier,
 ) {
@@ -46,9 +46,9 @@ fun AppConfigSuccessScreen(
 
 @Preview
 @Composable
-fun AppConfigSuccessScreenPreview() {
+fun AppConfigContentPreview() {
     WhiteLabelTheme {
-        AppConfigSuccessScreen(
+        AppConfigContent(
             model = AppConfigModel(
                 developerNickname = "Gabriel",
                 showContactInfo = false,

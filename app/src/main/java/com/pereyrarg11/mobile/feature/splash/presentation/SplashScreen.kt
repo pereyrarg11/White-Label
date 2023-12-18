@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.feature.splash.presentation.screen
+package com.pereyrarg11.mobile.feature.splash.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -6,7 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.pereyrarg11.mobile.core.presentation.navigation.ScreenRoute
-import com.pereyrarg11.mobile.feature.splash.presentation.SplashViewModel
+import com.pereyrarg11.mobile.feature.splash.presentation.component.SplashContent
 import com.pereyrarg11.mobile.feature.splash.presentation.model.SplashUiEvent
 
 @Composable
@@ -29,5 +29,5 @@ fun SplashScreen(
             }
         }
     }
-    SplashContentScreen(modifier = modifier)
+    SplashContent(modifier = modifier)
 }

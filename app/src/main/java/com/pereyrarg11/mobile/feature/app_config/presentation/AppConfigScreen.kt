@@ -1,10 +1,10 @@
-package com.pereyrarg11.mobile.feature.app_config.presentation.screen
+package com.pereyrarg11.mobile.feature.app_config.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.pereyrarg11.mobile.core.presentation.screen.MainScreen
-import com.pereyrarg11.mobile.feature.app_config.presentation.AppConfigViewModel
+import com.pereyrarg11.mobile.feature.app_config.presentation.component.AppConfigContent
 
 /**
  * It shows the app configuration downloaded from the remote source.
@@ -17,6 +17,6 @@ fun AppConfigScreen(
     MainScreen(
         modifier = modifier
     ) { innerModifier ->
-        AppConfigSuccessScreen(model = viewModel.appConfig, modifier = innerModifier)
+        AppConfigContent(model = viewModel.appConfig, modifier = innerModifier)
     }
 }
