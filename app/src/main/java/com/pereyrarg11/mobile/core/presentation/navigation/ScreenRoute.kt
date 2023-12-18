@@ -10,4 +10,6 @@ sealed class ScreenRoute(val route: String) {
     }
 
     object Splash: ScreenRoute("splash")
+
+    object AppConfig: ScreenRoute("appConfig")
 }

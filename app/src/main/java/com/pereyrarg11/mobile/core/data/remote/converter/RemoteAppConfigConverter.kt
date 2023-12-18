@@ -16,9 +16,10 @@ class RemoteAppConfigConverter @Inject constructor(
     override fun convert(input: AppConfigDto): AppConfigModel {
         return AppConfigModel(
             contactInfo = convertContactInfo(input.contactInfo),
+            contactInfoJson = input.contactInfo.orEmpty(),
             developerNickname = input.developerNickname.orEmpty(),
             showContactInfo = input.showContactInfo ?: false,
-            stars = input.stars ?: 0
+            stars = input.stars ?: 0,
         )
     }
 

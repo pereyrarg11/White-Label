@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.pereyrarg11.mobile.core.presentation.navigation.ScreenRoute
 import com.pereyrarg11.mobile.core.presentation.theme.WhiteLabelTheme
+import com.pereyrarg11.mobile.feature.app_config.presentation.screen.AppConfigScreen
 import com.pereyrarg11.mobile.feature.home.presentation.screen.HomeScreen
 import com.pereyrarg11.mobile.feature.splash.presentation.screen.SplashScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,6 +47,9 @@ fun AppContent(
                 }
                 composable(ScreenRoute.Home.route) {
                     HomeScreen()
+                }
+                composable(ScreenRoute.AppConfig.route) {
+                    AppConfigScreen()
                 }
             }
         }

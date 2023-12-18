@@ -20,7 +20,7 @@ fun SplashScreen(
             when (uiEvent) {
                 is SplashUiEvent.ShowError -> {}
                 SplashUiEvent.ConfigurationLoaded -> {
-                    navController.navigate(ScreenRoute.Home.route) {
+                    navController.navigate(ScreenRoute.AppConfig.route) {
                         popUpTo(ScreenRoute.Splash.route) {
                             inclusive = true
                         }
