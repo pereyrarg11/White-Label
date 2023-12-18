@@ -17,6 +17,9 @@ fun AppConfigScreen(
     MainScreen(
         modifier = modifier
     ) { innerModifier ->
-        AppConfigContent(model = viewModel.appConfig, modifier = innerModifier)
+        AppConfigContent(
+            model = viewModel.uiState.appConfig,
+            modifier = innerModifier,
+        )
     }
 }
