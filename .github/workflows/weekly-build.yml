@@ -34,5 +34,5 @@ jobs:
         uses: ./.github/actions/distribute-apk
         with:
           BUILD_VARIANT: 'Release'
-          TESTER_GROUPS: 'android-developers'
+          TESTER_GROUPS: 'android-developers,public-demo'
           RELEASE_NOTES: 'Weekly build'
