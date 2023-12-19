@@ -1,9 +1,11 @@
 package com.pereyrarg11.mobile.core.di.converter.remote
 
 import com.pereyrarg11.mobile.core.data.remote.converter.RemoteAppConfigConverter
+import com.pereyrarg11.mobile.core.data.remote.converter.RemoteContactInfoConverter
 import com.pereyrarg11.mobile.core.data.remote.dto.AppConfigDto
 import com.pereyrarg11.mobile.core.data.util.Converter
 import com.pereyrarg11.mobile.core.domain.model.AppConfigModel
+import com.pereyrarg11.mobile.core.domain.model.ContactInfoModel
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,4 +20,10 @@ abstract class RemoteAppConfigModule {
     abstract fun bindRemoteAppConfigConverter(
         converter: RemoteAppConfigConverter,
     ): Converter<AppConfigDto, AppConfigModel>
+
+    @Binds
+    @Singleton
+    abstract fun bindRemoteContactInfoConverter(
+        converter: RemoteContactInfoConverter,
+    ): Converter<String?, ContactInfoModel>
 }
