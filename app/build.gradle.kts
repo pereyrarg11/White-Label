@@ -21,6 +21,9 @@ android {
     namespace = "com.pereyrarg11.mobile"
     compileSdk = 34
 
+    buildFeatures {
+        buildConfig = true
+    }
     signingConfigs {
         create("release") {
             val (storePathProp, storePassProp, keyAliasProp, keyPassProp) =
@@ -100,6 +103,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.0")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
@@ -121,12 +125,18 @@ dependencies {
     /* Dependency Injection */
     implementation("com.google.dagger:hilt-android:2.48.1")
     kapt("com.google.dagger:hilt-android-compiler:2.48.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
 
     /* Firebase */
     // Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-config")
+
+    /* Remote data */
+    // Gson
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
 // Allow references to generated code

@@ -22,7 +22,7 @@
 ## About The Project
 
 The main goal of this project is to provide an empty app with basic functionalities, saving time for developers.
-All industry-level apps have common functionalities and features like loggers, basic screens, dependencies, utility classes, CI/CD, etc.
+All industry-level apps have common functionalities and features like loggers, splash screen, dependencies, utility classes, CI/CD, etc.
 
 Stop wasting time on trivial tasks!
 
@@ -70,8 +70,8 @@ For more information read the [Creating a repository from a template](https://do
 
 Some awesome features are missing right now. Follow this repo to get notified when they are ready!
 
+- [x] Remote config
 - [ ] In-app update
-- [ ] Remote config
 
 See the [open issues](https://github.com/pereyrarg11/White-Label/issues) for a full list of proposed
 features (and known issues).
@@ -119,3 +119,4 @@ Resources I find helpful and would like to give credit to.
 - [Tinypng](https://tinypng.com/)
 - [Android API Levels](https://apilevels.com)
 - [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+- [Color Hunt](https://colorhunt.co)

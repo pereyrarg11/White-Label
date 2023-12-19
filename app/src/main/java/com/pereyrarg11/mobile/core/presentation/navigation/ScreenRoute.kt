@@ -8,4 +8,8 @@ sealed class ScreenRoute(val route: String) {
     object Drink : ScreenRoute("detail/{$ID_PARAM}") {
         fun createRoute(id: String) = "detail/$id"
     }
+
+    object Splash: ScreenRoute("splash")
+
+    object AppConfig: ScreenRoute("appConfig")
 }

@@ -11,6 +11,6 @@ fun HomeScreen(
     MainScreen(
         modifier = modifier,
     ) { innerModifier ->
-        HomeSuccessScreen(innerModifier)
+        HomeSuccessScreen(modifier = innerModifier)
     }
 }

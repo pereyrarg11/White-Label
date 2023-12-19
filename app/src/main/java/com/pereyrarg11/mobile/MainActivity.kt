@@ -8,14 +8,22 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.pereyrarg11.mobile.core.presentation.navigation.ScreenRoute
 import com.pereyrarg11.mobile.core.presentation.theme.WhiteLabelTheme
+import com.pereyrarg11.mobile.feature.appConfig.presentation.AppConfigScreen
 import com.pereyrarg11.mobile.feature.home.presentation.screen.HomeScreen
+import com.pereyrarg11.mobile.feature.splash.presentation.SplashScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         setContent {
             AppContent()
         }
@@ -31,7 +39,19 @@ fun AppContent(
             modifier = modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            HomeScreen()
+            val navController = rememberNavController()
+
+            NavHost(navController = navController, startDestination = ScreenRoute.Splash.route) {
+                composable(ScreenRoute.Splash.route) {
+                    SplashScreen(navController = navController)
+                }
+                composable(ScreenRoute.Home.route) {
+                    HomeScreen()
+                }
+                composable(ScreenRoute.AppConfig.route) {
+                    AppConfigScreen()
+                }
+            }
         }
     }
 }
