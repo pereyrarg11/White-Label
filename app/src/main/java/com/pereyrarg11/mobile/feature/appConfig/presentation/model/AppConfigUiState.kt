@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.feature.app_config.presentation.model
+package com.pereyrarg11.mobile.feature.appConfig.presentation.model
 
 import com.pereyrarg11.mobile.core.domain.model.AppConfigModel
 import com.pereyrarg11.mobile.core.presentation.model.UiState

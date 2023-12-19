@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.feature.app_config.presentation
+package com.pereyrarg11.mobile.feature.appConfig.presentation
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -8,7 +8,7 @@ import com.pereyrarg11.mobile.core.domain.repository.AppConfigRepository
 import com.pereyrarg11.mobile.core.domain.util.Result
 import com.pereyrarg11.mobile.core.logger.error.ErrorLogger
 import com.pereyrarg11.mobile.core.presentation.BaseViewModel
-import com.pereyrarg11.mobile.feature.app_config.presentation.model.AppConfigUiState
+import com.pereyrarg11.mobile.feature.appConfig.presentation.model.AppConfigUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

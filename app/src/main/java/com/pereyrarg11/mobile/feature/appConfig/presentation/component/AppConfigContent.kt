@@ -1,4 +1,4 @@
-package com.pereyrarg11.mobile.feature.app_config.presentation.component
+package com.pereyrarg11.mobile.feature.appConfig.presentation.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
