@@ -11,9 +11,9 @@
     <br />
     <a href="https://appdistribution.firebase.dev/i/ac57e55786da5ad1">View Demo</a>
     ·
-    <a href="https://github.com/pereyrarg11/White-Label/issues/new">Report Bug</a>
+    <a href="https://github.com/pereyrarg11/White-Label/issues/new?assignees=pereyrarg11&labels=bug&projects=&template=bug_report.yaml&title=%5BBUG%5D+<title>">Report Bug</a>
     ·
-    <a href="https://github.com/pereyrarg11/White-Label/issues/new">Request Feature</a>
+    <a href="https://github.com/pereyrarg11/White-Label/issues/new?assignees=pereyrarg11&labels=enhancement&projects=&template=feature_request.yaml&title=%5BFEATURE%5D+<title>">Request Feature</a>
   </p>
 </div>
 
@@ -84,7 +84,7 @@ Contributions are what make the open source community such an amazing place to l
 and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request.
-You can also simply open a [Feature request](https://github.com/pereyrarg11/White-Label/issues/new).
+You can also simply open a [Feature request](https://github.com/pereyrarg11/White-Label/issues/new?assignees=pereyrarg11&labels=enhancement&projects=&template=feature_request.yaml&title=%5BFEATURE%5D+<title>).
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
