@@ -1,6 +1,7 @@
 package com.pereyrarg11.mobile.core.data.remote.converter
 
 import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
 import com.pereyrarg11.mobile.core.data.remote.dto.ContactInfoDto
 import com.pereyrarg11.mobile.core.data.util.Converter
 import com.pereyrarg11.mobile.core.domain.model.ContactInfoModel
@@ -24,7 +25,7 @@ class RemoteContactInfoConverter @Inject constructor(
                     linkedinUrl = contactInfoDto.linkedinUrl.orEmpty(),
                     githubUrl = contactInfoDto.githubUrl.orEmpty(),
                 )
-            } catch (exception: Exception) {
+            } catch (exception: JsonSyntaxException) {
                 errorLogger.logException(exception)
             }
         }

@@ -13,14 +13,13 @@ import com.pereyrarg11.mobile.core.presentation.theme.WhiteLabelTheme
 
 @Composable
 fun HomeSuccessScreen(
-    message: String = stringResource(id = R.string.app_name),
     modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
-        Text(text = message)
+        Text(text = stringResource(id = R.string.app_name))
     }
 }
 
